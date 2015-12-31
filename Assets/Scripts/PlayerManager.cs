@@ -42,12 +42,21 @@ public class PlayerManager : MonoBehaviour {
 		SelectedCharacter = playableCharacters [SelectedCharacterIndex];
 		SelectedCharacterModel = playableCharactersModels [SelectedCharacterIndex];
 
-		if (Input.GetKeyDown(KeyCode.Q)) 
+		if (Input.GetKeyDown(KeyCode.E)) 
 		{
 			SelectedCharacterIndex++;
 			if (SelectedCharacterIndex >= playableCharacters.Count)
 			{
 				SelectedCharacterIndex = 0;
+			}
+		}
+
+		if (Input.GetKeyDown(KeyCode.Q)) 
+		{
+			SelectedCharacterIndex--;
+			if (SelectedCharacterIndex < 0)
+			{
+				SelectedCharacterIndex = playableCharacters.Count - 1;
 			}
 		}
 
