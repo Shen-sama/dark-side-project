@@ -20,9 +20,9 @@ public class PlayerManager : MonoBehaviour {
 	{
 		playableCharacters = new List<Player> ();
 
-		Shen = new Player ("Shen Shi Harzgard", 1, 320, 100, 10, 15, 6, 12, 60, 0, 30, 20);
-		TK = new Player ("Tenkai Ishiyama", 1, 480, 130, 15, 8, 8, 8, 45, 15, 50, 35);
-		Jin = new Player ("Jin Katashi", 1, 280, 180, 8, 10, 15, 5, 20, 40, 20, 30);
+		Shen = new Player ("Shen Shi Harzgard", new KeyboardInput());
+		TK = new Player ("Tenkai Ishiyama", new KeyboardInput());
+		Jin = new Player ("Jin Katashi", new KeyboardInput());
 
 		playableCharacters.Add (Shen);
 		playableCharacters.Add (TK);
@@ -42,7 +42,7 @@ public class PlayerManager : MonoBehaviour {
 		SelectedCharacter = playableCharacters [SelectedCharacterIndex];
 		SelectedCharacterModel = playableCharactersModels [SelectedCharacterIndex];
 
-		if (Input.GetKeyDown(KeyCode.E)) 
+		if (SelectedCharacter.Input.ChangeToNextCharacter) 
 		{
 			SelectedCharacterIndex++;
 			if (SelectedCharacterIndex >= playableCharacters.Count)
@@ -51,7 +51,7 @@ public class PlayerManager : MonoBehaviour {
 			}
 		}
 
-		if (Input.GetKeyDown(KeyCode.Q)) 
+		if (SelectedCharacter.Input.ChangeToPreviousCharacter) 
 		{
 			SelectedCharacterIndex--;
 			if (SelectedCharacterIndex < 0)
