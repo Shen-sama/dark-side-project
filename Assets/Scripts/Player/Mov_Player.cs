@@ -20,7 +20,7 @@ public class Mov_Player : MonoBehaviour
     bool rightLooking;
 
     public float[] Limits;
-    public bool enteringPort = false;
+    public bool StopMoviment = false;
 
     void Start()
     {
@@ -34,10 +34,11 @@ public class Mov_Player : MonoBehaviour
     }
     void Update()
     {
-        if (!enteringPort)
+        if (!StopMoviment)
             Move();
         else
-            exitScene();
+            anim.SetBool("Walking", false);
+        //exitScene();
 
         //JUMP
         //rb.AddForce(Vector3.up * jumpPower, ForceMode.VelocityChange);
