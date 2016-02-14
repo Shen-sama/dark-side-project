@@ -1,6 +1,8 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2015
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dark-side-project.CSharp.Plugins", "dark-side-project.CSharp.Plugins.csproj", "{A92FF3DB-2529-8FD2-E6C1-9D9C10A72273}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "dark-side-project.CSharp", "dark-side-project.CSharp.csproj", "{C158FD48-46B6-3D6C-2CA2-465F680B7B65}"
 EndProject
 Global
@@ -9,6 +11,10 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{A92FF3DB-2529-8FD2-E6C1-9D9C10A72273}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A92FF3DB-2529-8FD2-E6C1-9D9C10A72273}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A92FF3DB-2529-8FD2-E6C1-9D9C10A72273}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A92FF3DB-2529-8FD2-E6C1-9D9C10A72273}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C158FD48-46B6-3D6C-2CA2-465F680B7B65}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C158FD48-46B6-3D6C-2CA2-465F680B7B65}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C158FD48-46B6-3D6C-2CA2-465F680B7B65}.Release|Any CPU.ActiveCfg = Release|Any CPU
