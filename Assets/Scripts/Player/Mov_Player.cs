@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
-using UnityEngine.SceneManagement;
+//using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(Animator))]
 
@@ -19,7 +19,7 @@ public class Mov_Player : MonoBehaviour
     bool IsWalking;
     bool rightLooking;
 
-    public float[] Limits;
+    //public float[] Limits;
     public bool StopMoviment = false;
 
     void Start()
@@ -64,18 +64,18 @@ public class Mov_Player : MonoBehaviour
         }
 
 
-        velocity = new Vector3(v * speed, 0, 0);
+       // velocity = new Vector3(v * speed, 0, 0);
 
-        if (transform.localPosition.x < Limits[0])
-        {
-            transform.localPosition = new Vector3(Limits[0], transform.position.y, transform.position.z);
-        }
-        if (transform.localPosition.x > Limits[1])
-        {
-            transform.localPosition = new Vector3(Limits[1], transform.position.y, transform.position.z);
-        }
+        //if (transform.localPosition.x < Limits[0])
+        //{
+        //    transform.localPosition = new Vector3(Limits[0], transform.position.y, transform.position.z);
+        //}
+        //if (transform.localPosition.x > Limits[1])
+        //{
+        //    transform.localPosition = new Vector3(Limits[1], transform.position.y, transform.position.z);
+        //}
         anim.SetBool("Walking", IsWalking);
-        transform.localPosition += velocity * Time.fixedDeltaTime;
+        //transform.localPosition += velocity * Time.fixedDeltaTime;
     }
     void girar(bool Right)
     {    
@@ -95,23 +95,23 @@ public class Mov_Player : MonoBehaviour
             }
     }
 
-    public void exitScene()
-   {      
-        float degreesPerSecond = 150.0F;
-        transform.Rotate(Vector3.up * degreesPerSecond * Time.deltaTime);
+   // public void exitScene()
+   //{      
+   //     float degreesPerSecond = 150.0F;
+   //     transform.Rotate(Vector3.up * degreesPerSecond * Time.deltaTime);
 
-        bool go = true;
-        if (go)
-        {
-            Invoke("proxScene", 0.8F);
-            go = false;
-        }
+   //     bool go = true;
+   //     if (go)
+   //     {
+   //         Invoke("proxScene", 0.8F);
+   //         go = false;
+   //     }
 
-    }   
-    void proxScene()
-    {
-        SceneManager.LoadScene("Paullo");
-    }
+   // }   
+   // void proxScene()
+   // {
+   //     //SceneManager.LoadScene("Paullo");
+   // }
 
 }
 

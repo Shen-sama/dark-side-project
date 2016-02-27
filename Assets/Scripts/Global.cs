@@ -10,10 +10,14 @@ public class Global : MonoBehaviour {
 
     public List<Npc> npc;
 
+    public arma Arma;
+
     void Start () {
          npc = new List<Npc>();
          npc.Add(new Npc(nome1, falaPersonagem1));
          npc.Add(new Npc(nome2, falaPersonagem2));
-       
+
+        //Criar Itens go go go...
+        //Arma = new arma();
     }
 }
