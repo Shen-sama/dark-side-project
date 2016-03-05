@@ -81,19 +81,19 @@ public class Controller : MonoBehaviour
         //FindFloorAndRotation();
         //MoveCharacter();
 
-        if (Input.GetKeyDown("right"))        
+        if (Input.GetKeyDown("left"))        
             characterDirection = Direction.Forward;
         
-        if (Input.GetKeyDown("left"))       
+        if (Input.GetKeyDown("right"))       
             characterDirection = Direction.Reverse;
         
-        if (Input.GetKey("right"))
+        if (Input.GetKey("left"))
         {
             Calcular();
             iTween.PutOnPath(character.gameObject, waypointArray, currentPathPercent);
         }
 
-        if (Input.GetKey("left"))
+        if (Input.GetKey("right"))
         {
             float deltaPercent = percentsPerSecond * Time.deltaTime;
             Vector3 nextPoint = iTween.PointOnPath(waypointArray, currentPathPercent + deltaPercent);
@@ -131,17 +131,17 @@ public class Controller : MonoBehaviour
     void DetectKeys()
     {
         //forward path movement:
-        if (Input.GetKeyDown("right"))
-            characterDirection = Direction.Forward;
+        if (Input.GetKeyDown("left")) 
+             characterDirection = Direction.Forward;
 
-        if (Input.GetKey("right"))
+        if (Input.GetKey("left"))
             pathPosition += Time.deltaTime * (speed);
 
         //giro do personagem:
-        if (Input.GetKeyDown("left"))
+        if (Input.GetKeyDown("right"))
             characterDirection = Direction.Reverse;
 
-        if (Input.GetKey("left"))
+        if (Input.GetKey("right"))
         {
             //   lidar com ciclo caminho em torno de uma vez que não pode interpolar uma percentagem caminho que é negativo(bem duh):
             float temp = pathPosition - (Time.deltaTime * (speed));
